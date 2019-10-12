@@ -1,0 +1,43 @@
+(c) Create a class called complex for performing arithmetic operations with complex numbers. 
+Use floating point variables to represent the private data of the class. 
+Provide a default constructor that initializes the object with some default values. 
+Provide public member functions for each of the following
+
+•        Addition of two complex numbers: It returns the result obtained by adding the respective real 
+parts and the imaginary parts of the two complex numbers.
+
+•        Subtraction of two complex numbers: It returns the result obtained by subtracting the 
+respective real parts and the imaginary parts of the two complex numbers.
+
+•        display( ) – It displays the complex number in a+bi format.
+
+The output should be displayed as follows:-        
+
+Sum of  a1+b1 i   &   a2+b2 i     is  :  a3+b3 i
+
+ 
+
+(d)  Create an object called GSSArray. (It stands for growable self-sorting array)
+
+This object will manage an array of type int. 
+Create a private variable for an array of type int. 
+In the constructor for this object, take in an int value which will determine the starting size of the array. 
+The constructor should also instantiate the array.
+
+Create a public method called insert, which will take in an int
+and find the location in the array where it belongs and insert 
+it there. If the array is full, then before inserting the value,
+method insert should call private method increaseSize, 
+which will create a new array which is double the size of the
+current array. Then it will copy the values from the original 
+array into the new array and set the private variable to this 
+new array.
+
+The array should keep track of how many of its indexes are 
+filled. Create a private variable called lastindex which will be equal to the last
+index of the array that has a value.
+
+Create a public method delete, which will take an int and if will 
+remove the 1st instance of that number in the array. If the number doesn't exist, 
+the method should return false, otherwise it should return true. (Don't forget to update 
+variable lastindex in methods delete and insert.)
