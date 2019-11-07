@@ -1,4 +1,3 @@
-package abc;
 import inter_example.*;
 
 public class run {
