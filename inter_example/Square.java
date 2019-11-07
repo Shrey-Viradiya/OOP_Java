@@ -17,9 +17,6 @@ public class Square implements Polygon{
     public void calcPeri(){
         perimeter = 4 * side;
     }
-
-    
-
     
     public void display( ){
         System.out.println(area);
