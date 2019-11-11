@@ -1,8 +1,13 @@
+// This program searches for the name available in the names.txt
+// Enter the name to Search in the command Line argument
+
+// Example: java prac10c Shrey Kenil Akshay
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 
-class prac9c {
+class prac10c {
     public static void main(String[] args) {
         File inSearch = new File("names.txt");
 

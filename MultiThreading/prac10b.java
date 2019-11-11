@@ -1,4 +1,4 @@
-class prac9a{
+class prac10b{
     public static void main(String[] args) throws InterruptedException {
         Storage x = new Storage();
         
@@ -7,7 +7,7 @@ class prac9a{
         Thread t2 =  new Thread(new printer(x));
 
         t.start();
-        t2.start(); 
+        t2.start();
     }
 }
 
@@ -70,5 +70,3 @@ class printer implements Runnable{
     }    
     }
 }
-
-
