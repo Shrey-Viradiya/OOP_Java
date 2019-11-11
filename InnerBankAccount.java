@@ -64,10 +64,10 @@ class BankAccount {
 
     float getBalance() throws LowBalanceException{
         if(accType.equals("Savings") && balance<= 1000){
-            throw new LowBalanceException("Low Balance!");
+            throw new LowBalanceException("Low Balance! "  + balance);
         }
         if(accType.equals("Current") && balance <= 5000){
-            throw new LowBalanceException("Low Balance!");
+            throw new LowBalanceException("Low Balance! " + balance);
         }
         return balance;
     }
