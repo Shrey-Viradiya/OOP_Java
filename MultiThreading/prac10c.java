@@ -1,7 +1,7 @@
 // This program searches for the name available in the names.txt
 // Enter the name to Search in the command Line argument
 
-// Example: java prac10c Shrey Kenil Akshay
+// Example: java prac10c Shrey Kenil Akshay 
 
 import java.io.File;
 import java.io.FileNotFoundException;
