@@ -19,8 +19,8 @@ public class prac10e {
         // t.setPriority(+2);
         // t2.setPriority(-2);
 
-        t.setPriority(Thread.NORM_PRIORITY);
-        t2.setPriority(Thread.MIN_PRIORITY);
+        t.setPriority(Thread.NORM_PRIORITY - 3);
+        t2.setPriority(Thread.NORM_PRIORITY);
 
         t.start();
         t2.start();

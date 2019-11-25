@@ -23,7 +23,7 @@ public class prac10fWriter {
             System.out.println("Enter the Name: ");
             try {
                 Name = s.nextLine();
-                if(Name.equals("")) throw new EmptyFieldException("Name Can't be empty");
+                if(Name.trim().equals("")) throw new EmptyFieldException("Name Can't be empty");
                 break;
             } catch (EmptyFieldException E) {
                 System.out.println(E.getMessage());
@@ -57,7 +57,7 @@ public class prac10fWriter {
             try {
                 s.nextLine();
                 Address = s.nextLine();
-                if(Address.equals("")) throw new EmptyFieldException("Address Can't be empty");
+                if(Address.trim().equals("")) throw new EmptyFieldException("Address Can't be empty");
                 break;
             } catch (EmptyFieldException E) {
                 System.out.println(E.getMessage());
@@ -70,7 +70,7 @@ public class prac10fWriter {
             System.out.println("Enter the Choice: ");
             try {
                 choice = s.nextLine();
-                if(choice.equals("")) throw new EmptyFieldException("choice Can't be empty");
+                if(choice.trim().equals("")) throw new EmptyFieldException("choice Can't be empty");
                 
                 if (choice.toLowerCase().contains("yes")) {
                     File f = new File("data.txt");

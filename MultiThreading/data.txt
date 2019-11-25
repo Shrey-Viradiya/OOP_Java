@@ -1,3 +1,4 @@
 Shrey,25,Nathdwara,19
 Tirth,245,Hola,19
 Manish,75,Cneter,19
+Tirth,244,Maa Hostel,19
