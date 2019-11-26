@@ -68,7 +68,7 @@ class Reader extends Thread {
                 Thread.sleep((int) Math.random() * delay);
             } catch (final InterruptedException ignored) {
                 // TODO: handle exception
-            }
+            }  
 
             this.db.read(this.number);
         }

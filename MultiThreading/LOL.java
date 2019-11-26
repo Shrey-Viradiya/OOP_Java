@@ -1,10 +1,6 @@
-class scrap {
-
-}
-
 class LOL {
     public static void main(String[] args) {
-        scrap t = new scrap();
+        Object t = new Object();
 
         Thread t1 = new Thread(new Runnable() {
 
@@ -17,8 +13,6 @@ class LOL {
                             t.notify();
                             t.wait();
                         } catch (Exception e) {
-                            // TODO Auto-generated catch block
-                            e.printStackTrace();
                         }
                     }
 
@@ -33,13 +27,14 @@ class LOL {
                 for (int i = 1; i < 100; i = i + 2) {
                     synchronized (t) {
                         System.out.println("Odd: "+i);
-                        
+                        if(i==99){
+                            t1.interrupt();
+                            break;
+                        }
                         try {
                             t.notify();
                             t.wait();
                         } catch (Exception e) {
-                            // TODO Auto-generated catch block
-                            e.printStackTrace();
                         }
                     }
                     

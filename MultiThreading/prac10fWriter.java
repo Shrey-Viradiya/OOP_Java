@@ -1,9 +1,11 @@
 // write in the data.txt file using this program
 // to read the data use prac10fWriter class
 
+import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
+import java.io.FileWriter;
 import java.io.PrintWriter;
 import java.util.Scanner;
 
@@ -75,13 +77,14 @@ public class prac10fWriter {
                 if (choice.toLowerCase().contains("yes")) {
                     File f = new File("data.txt");
                     try{
-                    PrintWriter pw =new PrintWriter(new FileOutputStream(f,true));
+                    BufferedWriter pw =new BufferedWriter(new FileWriter(f,true));
                     pw.append(Name).append(",").append("" + rollNo).append(",").append(Address).append(",").append("" + age).append("\n");
                     pw.flush();
                     pw.close();
                 }catch(FileNotFoundException E){
                     System.out.println("File Not Found... Writing Data Failed");
                 }
+                catch(Exception ignored){}
                 }
                 else if (choice.toLowerCase().contains("no")) {
                     return;

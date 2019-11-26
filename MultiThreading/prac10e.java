@@ -23,6 +23,7 @@ public class prac10e {
         t2.setPriority(Thread.NORM_PRIORITY);
 
         t.start();
+        try{t.join();}catch(Exception ignored){}
         t2.start();
     }
     

@@ -13,12 +13,21 @@ class prac10b2 {
 class Storage2 {
     int a;
 
-    synchronized int getVal() {
-        return a;
+    synchronized void getVal() {
+        System.out.println("Thrown: " + a);
+try{        notify();
+        wait();
+}catch(Exception ignored){}
     }
 
     synchronized void setVal(int ab) {
         a = ab;
+        System.out.println("Got: " + a);
+        try {
+            notify();
+            wait();
+        } catch (Exception e) {
+        }
     }
 }
 
@@ -30,18 +39,11 @@ class counter2 implements Runnable {
     }
 
     public void run() {
-        for (int i = 0; i < 100; i++) {
+        for (int i = 0; i < 100; i++){
             a.setVal(i);
-            notify();
-            try {
-                wait();
-            } catch (InterruptedException e) {
-                // TODO Auto-generated catch block
-                e.printStackTrace();
-            }
+        }
         }
     }
-}
 
 class printer2 implements Runnable{
     Storage2 a;
@@ -51,15 +53,8 @@ class printer2 implements Runnable{
     }
 
     public void run(){
-        while (a.getVal() < 100) {
-        try {
-            System.out.println("Printer: "+a.getVal());
-            
-            a.notify();
-            a.wait();        
-            }
-         catch (Exception ignored) {
-        }
+        while (true) {
+            a.getVal();
     }    
     }
 }
