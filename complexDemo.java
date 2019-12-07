@@ -8,7 +8,7 @@ class complex {
         real = 0.0f;
         imaginary = 0.0f;
     }
-    
+
     float getReal(){
         return real;
     }
@@ -41,6 +41,20 @@ class complex {
         return sub;
     }
 
+    static complex Add(complex a, complex b){
+      complex add = new complex();
+      add.setReal(a.getReal() + b.getReal());
+      add.setImaginary(a.getImaginary() + b.getImaginary());
+      return add;
+    }
+
+    static complex Subtract(complex a, complex b){
+      complex sub = new complex();
+      sub.setReal(a.getReal() - b.getReal());
+      sub.setImaginary(a.getImaginary() - b.getImaginary());
+      return sub;
+    }
+
     String display(){
         return "" + real + " + " + imaginary + "i ";
     }
@@ -71,9 +85,6 @@ class complexDemo {
         temp = S.nextFloat();
         b.setImaginary(temp);
 
-
-
-
         complex add;
         complex sub;
 
@@ -82,6 +93,14 @@ class complexDemo {
 
         System.out.println("Sum of " + a.display() + " and " + b.display() +  " is " + add.display());
         System.out.println("Sub. of " + a.display() + " and " + b.display() +  " is " + sub.display());
+
+        add = complex.Add(add,sub);
+        sub = complex.Subtract(add,sub);
+
+        System.out.println(add.display());
+        System.out.println(sub.display());
+
+
     }
-    
+
 }
