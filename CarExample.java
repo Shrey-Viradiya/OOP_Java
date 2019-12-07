@@ -7,10 +7,10 @@ public class CarExample {
 
         ferrariXSF5.display();
     }
-    
+
 }
 
-class Car{ 
+class Car{
     double speed = 0;
     int noOfGears = 5;
 
@@ -20,7 +20,7 @@ class Car{
     }
 
     void display(){
-        System.out.println("Speed: " + speed);
+        System.out.println("Speed: " + speed + " mph");
         System.out.println("No of gears: " + noOfGears);
     }
 
@@ -32,7 +32,7 @@ class SportCar extends Car{
     SportCar(){
         speed = 50;
         noOfGears = 7;
-        AirBallonType = new String("Type1");
+        AirBallonType = new String("HyperFast TurboCharged shock-proof");
     }
 
     void display(){
