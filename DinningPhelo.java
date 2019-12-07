@@ -36,21 +36,26 @@ class Spagetti
 
     public void eat(String name) {
 
+        // Phelosopher Tries to pickup first fork
         this.f0.pickUp();
+
+        // If second fork is busy then he puts down the first fork
         if(f1.busy == true){
             f0.putDown();
             return;
-        } 
-        
-        
-        
+        }
+
+        // Phelosopher Tries to pickUp second fork
         this.f1.pickUp();
+
         System.out.println("\n" + name + " eating spagetti!\n");
         try {
-            Thread.sleep((int)(5000* (Math.random()))); // eat for 5 seconds
+            Thread.sleep((int)(5000* (Math.random()))); // eat for random time, maximum 5 seconds
         }
         catch (Exception e) {}
         System.out.println("\n" + name + " finished eating spagetti!\n");
+
+        // Phelosopher puts down both forks
         this.f0.putDown();
         this.f1.putDown();
     }
@@ -66,11 +71,14 @@ class Philosopher implements Runnable
     }
 
     public void run() {
+      // Thinks For Some Time
         while(true) {
             try {
                 Thread.sleep((int)(1000*(1 + Math.random())));
             }
             catch (Exception e) {}
+
+        // Eats Spagetti
             food.eat(this.name);
         }
     }
@@ -91,7 +99,7 @@ class Table
         this.philosophers = new Philosopher[5];
 
         for(int i=0;i<5;i++) {
-            this.philosophers[i] = new Philosopher(this.forks[i], this.forks[(i+1)%5], "p"+i);
+            this.philosophers[i] = new Philosopher(this.forks[i], this.forks[(i+1)%5], "Phelosopher "+i+ " ");
             new Thread(this.philosophers[i]).start();
         }
     }
