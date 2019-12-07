@@ -1,14 +1,21 @@
 import java.util.Scanner;
+import java.time.Instant;
+import java.time.Duration;
+
 public class count {
     public static void main(String[] args) {
         int vowels = 0, consonants = 0, digits = 0, spaces = 0;
         Scanner sc=new Scanner(System.in);
         String line = new String();
 
-        System.out.println("Enter Your String"); 
-        line=sc.nextLine();        
+        System.out.println("Enter Your String");
+        line=sc.nextLine();
+
+
+        Instant start = Instant.now();
         line = line.toLowerCase();
-        
+
+
         for(int i = 0; i < line.length(); ++i)
         {
             char ch = line.charAt(i);
@@ -34,7 +41,7 @@ public class count {
                 case 'u':
                     ++vowels;
                     break;
-                
+
                 case ' ':
                     ++spaces;
                     break;
@@ -61,5 +68,10 @@ public class count {
         System.out.println("Consonants: " + consonants);
         System.out.println("Digits: " + digits);
         System.out.println("White spaces: " + spaces);
+
+        Instant finish = Instant.now();
+
+        long timeElapsed = Duration.between(start, finish).toNanos();
+        System.out.println(timeElapsed);
     }
 }
