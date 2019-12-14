@@ -29,5 +29,5 @@ public class prac6 {
         rectangle r = new rectangle();
         r.display();
         System.out.println(r.area());
-    }    
+    }
 }
